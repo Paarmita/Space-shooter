@@ -11,20 +11,11 @@ def check_events(ship):
 
 		# keydown->right->centre shift
 		elif event.type == pygame.KEYDOWN:
-			if event.key == pygame.K_RIGHT:
-				# true when key pressed false when released
-				ship.moving_right = True
-			elif event.key == pygame.K_LEFT:
-				ship.moving_left = True
-				# Move the ship to the right.
-				ship.rect.centerx += 1
+			check_keydown_events(event, ship)
 
 		elif event.type == pygame.KEYUP:
-			if event.key == pygame.K_RIGHT:
-				# set to false when keyup
-				ship.moving_right = False
-			elif event.key == pygame.K_LEFT:
-				ship.moving_left = False
+			check_keyup_events(event, ship)
+			
 
 def update_screen(ai_settings,screen,ship):
 # Update images on the screen and flip to the new screen.
@@ -35,3 +26,21 @@ def update_screen(ai_settings,screen,ship):
 
 	# Make the most recently drawn screen visible.
 	pygame.display.flip()
+
+def check_keydown_events(event, ship):
+	#Respond to keypresses.
+	if event.key == pygame.K_RIGHT:
+		# true when key pressed false when released
+		ship.moving_right = True
+	elif event.key == pygame.K_LEFT:
+		ship.moving_left = True
+		# Move the ship to the right.
+		ship.rect.centerx += 1
+
+def check_keyup_events(event, ship):
+	# Respond to key releases.
+	if event.key == pygame.K_RIGHT:
+		# set to false when keyup
+		ship.moving_right = False
+	elif event.key == pygame.K_LEFT:
+		ship.moving_left = False
