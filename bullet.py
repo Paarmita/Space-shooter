@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import pygame
 # group related elements in your game and act on all the grouped elements at once
 from pygame.sprite import Sprite
