@@ -8,6 +8,7 @@ Python game using pygame
 | Move left     | left arrow    | 
 | Move right    | right arrow   |  
 | Fire bullets  | spacebar      |
+| exit          | esc           |
 
 ## Run on linux
 Prerequisite : python and pygame installed

@@ -12,11 +12,12 @@ class Settings():
 		self.ship_speed_factor = 1.5
 
 		# Bullet settings
-		self.bullet_speed_factor = 1
+		self.bullet_speed_factor = 3
 		self.bullet_width = 10
 		self.bullet_height = 15
 		self.bullet_color = (0,0,0)
 		# self.bullets_allowed = 3 # to limit the no of bullets
+		
 		# Alien settings
 		self.alien_speed_factor = 1
 		# controls how quickly the fleet drops down 

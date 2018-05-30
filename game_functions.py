@@ -17,7 +17,6 @@ def check_events(ai_settings, screen, ship, bullets):
 		elif event.type == pygame.KEYUP:
 			check_keyup_events(event, ship)
 			
-
 def update_screen(ai_settings, screen, ship, aliens, bullets):
 # Update images on the screen and flip to the new screen.
 # Redraw the screen during each pass through the loop.
@@ -26,8 +25,7 @@ def update_screen(ai_settings, screen, ship, aliens, bullets):
 
 	ship.blitme()
 	aliens.draw(screen)
-	# aliens.blitme()
-	
+	# aliens.blitme()s
 
 	# Redraw all bullets behind ship and aliens.
 	for bullet in bullets.sprites():
@@ -51,7 +49,6 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
 	elif event.key == pygame.K_esc:
 		sys.exit()
 		
-
 def check_keyup_events(event, ship):
 	# Respond to key releases.
 	if event.key == pygame.K_RIGHT:
@@ -60,11 +57,9 @@ def check_keyup_events(event, ship):
 	elif event.key == pygame.K_LEFT:
 		ship.moving_left = False
 
-
-
-def update_bullets(bullets):
-# Update position of bullets and get rid of old bullets
-# Update bullet positions.
+def update_bullets(ai_settings, screen, ship, aliens, bullets):
+	# Update position of bullets and get rid of old bullets
+	# Update bullet positions.
 	bullets.update()
 
 	# # Get rid of bullets that have disappeared as they consume memory.
@@ -72,6 +67,25 @@ def update_bullets(bullets):
 	# 	if bullet.rect.bottom <= 0:
 	# 		bullets.remove(bullet)
 	# print(len(bullets))
+
+	check_bullet_alien_collisions(ai_settings, screen, ship, aliens, bullets)
+	
+# Whenever the rects of a bullet and alien overlap, 
+# groupcollide() adds a key-value pair to the dictionary it returns. 
+# The two True arguments tell Pygame whether to delete the bullets and aliens that have collided
+
+
+def check_bullet_alien_collisions(ai_settings, screen, ship, aliens, bullets):
+	# Respond to bullet-alien collisions."""
+	# Remove any bullets and aliens that have collided
+	# Check for any bullets that have hit aliens.
+	# If so, get rid of the bullet and the alien.
+	collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
+
+	if len(aliens) == 0: # check group aliens empty
+		# Destroy existing bullets and create new fleet.
+		bullets.empty()
+		create_fleet(ai_settings, screen, ship, aliens)
 
 def fire_bullet(ai_settings, screen, ship, bullets):
 	# Fire a bullet if limit not reached yet.
@@ -109,7 +123,6 @@ def create_alien(ai_settings, screen, aliens, alien_number, row_number):
 	alien.rect.y = alien.rect.height + 2 * alien.rect.height * row_number
 	# add to alien group
 	aliens.add(alien)
-
 
 def create_fleet(ai_settings, screen, ship, aliens):
 	# Create a full fleet of aliens.
