@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class Settings():
 	# A class to store all settings for Alien Invasion.
 	def __init__(self):
@@ -10,6 +12,7 @@ class Settings():
 
 		# Ship settings
 		self.ship_speed_factor = 1.5
+		self.ship_limit = 3
 
 		# Bullet settings
 		self.bullet_speed_factor = 3

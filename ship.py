@@ -47,5 +47,8 @@ class Ship():
 		# Draw the ship at its current location.
 		self.screen.blit(self.image, self.rect)
 
+	def center_ship(self):
+		# Center the ship on the screen.
+		self.center = self.screen_rect.centerx
 
 # centerx store only integer values and not decimal and we are using decimal values for speed
