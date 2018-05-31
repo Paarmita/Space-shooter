@@ -10,6 +10,8 @@ Python game using pygame
 | Fire bullets  | spacebar      |
 | exit          | esc           |
 
+* Score 10 points for each alien hit and increases on each level
+
 ## Run on linux
 Prerequisite : python and pygame installed
 
