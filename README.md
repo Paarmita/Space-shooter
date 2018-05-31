@@ -28,3 +28,6 @@ Prerequisite : python and pygame installed
 
 - [ ] Add key press P to play
 - [ ] Game over msg after 3 ships
+- [ ] Display highscore and score labels
+- [ ] All time highScore by wrtitng score to a file
+- [ ] Sound effects on explosions and shooting sounds.

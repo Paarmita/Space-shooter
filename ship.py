@@ -1,18 +1,20 @@
 # -*- coding: utf-8 -*-
 import pygame
+from pygame.sprite import Sprite
 
-class Ship():
+class Ship(Sprite):
 	
 	# constructor
 	def __init__(self, ai_settings, screen):
 		# Initialize the ship and set its starting position.
+		super(Ship, self).__init__()
 		self.screen = screen
 		# access speed settings
 		self.ai_settings = ai_settings
 
 		# Load the ship image and get its rect.
 		self.image = pygame.image.load('images/ship.bmp')
-		self.image = pygame.transform.scale(self.image, (170,250))
+		self.image = pygame.transform.scale(self.image, (50,50))
 		# to access the surface’s rect attribute
 		self.rect = self.image.get_rect()
 		self.screen_rect = screen.get_rect()
