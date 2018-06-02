@@ -1,6 +1,7 @@
 # Space-shooter
 Python game using pygame
 
+![](https://github.com/Paarmita/Space-shooter/blob/master/images/screenshot.png)
 ## Controls
 
 | Control       | Button        |
