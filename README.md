@@ -25,7 +25,7 @@ Prerequisite : python and pygame installed
    cd Space-shooter
    python alien_invasion.py
 ```
-
+## Features to add
 - [ ] Add key press P to play
 - [ ] Game over msg after 3 ships
 - [ ] Display highscore and score labels
